@@ -1,49 +1,37 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
-	</view>
+  <view class="content">
+    <text class="title">数字输入框：</text>
+    <input-number v-model="inputValue"></input-number>
+  </view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
+import InputNumber from '@/components/input-number/input-number.vue'
 
-		},
-		methods: {
-
-		}
-	}
+export default {
+  components: {
+    InputNumber,
+  },
+  data () {
+    return {
+      inputValue: '',
+    }
+  },
+  onLoad () { },
+  methods: {},
+}
 </script>
 
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+<style scoped>
+.content {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
+.title {
+  font-size: 36rpx;
+  color: #8f8f94;
+}
 </style>
